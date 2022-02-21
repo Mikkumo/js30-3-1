@@ -1,6 +1,10 @@
 const index = document.getElementById('index')
 let move = 0
 let result = ''
+let content = document.getElementById('content')
+let modalResult = document.getElementById('modal-result')
+let overlay = document.getElementById('overlay')
+let buttonClose = document.getElementById('button-close')
 
 index.addEventListener('click', e => {
     if (e.target.className = 'cell') {
@@ -25,15 +29,21 @@ const check = () => {
 
     winPosition.forEach(e => {
         if (cells[e[0]].innerHTML === 'X' && cells[e[1]].innerHTML === 'X' && cells[e[2]].innerHTML === 'X') {
-            result = 'крестики'
+            result = 'Tic'
             lastResult(result)
         } else if (cells[e[0]].innerHTML === '0' && cells[e[1]].innerHTML === '0' && cells[e[2]].innerHTML === '0') {
-            result = 'нолики'
+            result = 'Tac'
             lastResult(result)
         }
     })
 }
 
 let lastResult = winner => {
-    console.log(winner)
+    content.innerHTML = `Winner ${winner}!`
+    modalResult.style.display = 'block'
+}
+
+let closeModal = () => {
+    modalResult.style.display = 'none'
+    location.reload();
 }

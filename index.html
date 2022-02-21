@@ -10,6 +10,7 @@
 <body>
     <section>
         <h1 class="title">Tic-Tac toe</h1>
+
         <div class="container">
             <div id="index">
                 <div class="cell"></div>
@@ -23,9 +24,18 @@
                 <div class="cell"></div>
             </div>
         </div>
-        <h1 class="status"></h1>
+
+        <div id="modal-result">
+            <div id="overlay"></div>
+            <div id="modal-window">
+                <div id="content">content</div>
+                <div id="button-close">Start NEW game</div>
+            </div>
+        </div>
+
         <button class="restart">Do you want RESTART game?</button>
     </section>
+
     <script src="/script.js"></script>
 </body>
 </html>
