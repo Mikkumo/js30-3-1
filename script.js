@@ -34,7 +34,7 @@ const check = () => {
         } else if (cells[e[0]].innerHTML === '0' && cells[e[1]].innerHTML === '0' && cells[e[2]].innerHTML === '0') {
             result = 'Tac'
             lastResult(result)
-        }
+        } 
     })
 }
 
@@ -47,3 +47,11 @@ let closeModal = () => {
     modalResult.style.display = 'none'
     location.reload();
 }
+
+let restart = () => {
+    location.reload();
+}
+
+overlay.addEventListener('click', closeModal)
+buttonClose.addEventListener('click', closeModal)
+//restart.addEventListener('click', restart)
